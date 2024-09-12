@@ -60,8 +60,12 @@ namespace QueuingCashierApp
         private void btnNext_Click(object sender, EventArgs e)
         {
 
-            listCashierQueue.Items.RemoveAt(0);
-            CashierClass.CashierQueue.Dequeue();
+            if (listCashierQueue.Items.Count >= 1) 
+            {
+                listCashierQueue.Items.RemoveAt(0);
+                CashierClass.CashierQueue.Dequeue();
+            }
+            
         }
 
         private void listCashierQueue_SelectedIndexChanged(object sender, EventArgs e)
